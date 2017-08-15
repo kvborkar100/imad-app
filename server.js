@@ -5,7 +5,8 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleOne ={
+var articles={ 
+  'articleOne' :{
   title:'Article One | Krushna Borkar',
   heading:'This is heading for one',
   content:` <p>
@@ -19,7 +20,39 @@ var articleOne ={
             <p>
                 This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.
             </p>`
+},
+  'articleTwo' : {
+  title:'Article Two | Krushna Borkar',
+  heading:'This is heading for two',
+  content:` <p>  Two
+                This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.
+            </p>
+            
+            <p>
+                This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.
+            </p>
+            
+            <p>
+                This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.
+            </p>`
+},
+'articleThree':{
+  title: 'Article Three | Krushna Borkar',
+  heading:'This is heading for three',
+  content:` <p>three
+                This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.
+            </p>
+            
+            <p>
+                This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.
+            </p>
+            
+            <p>
+                This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.
+            </p>`
+},
 };
+  
 
 function createTemplate(data){
     var title=data.title;
@@ -59,17 +92,11 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-one',function(req,res){
- res.send(createTemplate(articleOne));
+app.get('/:articleName',function(req,res){
+    var articleName=req.params.articleName;
+ res.send(createTemplate(articles[articleName]));
 });
 
-app.get('/article-2',function(req,res){
-  res.send('article two is requested');  
-});
-
-app.get('/article-3',function(req,res){
-  res.send('article three is requested');  
-});
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
