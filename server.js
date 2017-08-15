@@ -6,7 +6,7 @@ var app = express();
 app.use(morgan('combined'));
 
 var articles={ 
-  'articleOne' :{
+  'article-one' :{
   title:'Article One | Krushna Borkar',
   heading:'This is heading for one',
   content:` <p>
@@ -21,7 +21,7 @@ var articles={
                 This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.
             </p>`
 },
-  'articleTwo' : {
+  'articl-ewo' : {
   title:'Article Two | Krushna Borkar',
   heading:'This is heading for two',
   content:` <p>  Two
@@ -36,7 +36,7 @@ var articles={
                 This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.
             </p>`
 },
-'articleThree':{
+'article-three':{
   title: 'Article Three | Krushna Borkar',
   heading:'This is heading for three',
   content:` <p>three
