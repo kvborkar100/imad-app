@@ -21,7 +21,7 @@ var articles={
                 This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.This is contet area.Write content here.
             </p>`
 },
-  'articl-ewo' : {
+  'articl-two' : {
   title:'Article Two | Krushna Borkar',
   heading:'This is heading for two',
   content:` <p>  Two
