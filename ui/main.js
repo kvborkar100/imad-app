@@ -1,5 +1,5 @@
 console.log('Loaded!');
-var element=document.ElementById('main-text');
+var element=document.getElementById('main-text');
 element.innerHTML='HI HI HI';
 
 
